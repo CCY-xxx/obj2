@@ -16,6 +16,7 @@
 
     <div
       class="img"
+       ref="img" 
       @click="fadeClick(index)"
       v-for="(item,index) in styleObject"
       :key="index"
@@ -41,10 +42,12 @@
 </template>
 
 <script>
+import axios from "axios";
 import { mapState } from "vuex";//导入vuex中的state
 export default {
   data() {
     return {
+      index:0,
       flag: true,
       msg: "Welcome to Your Vue.js App"
      
@@ -64,6 +67,14 @@ export default {
       // console.log(this.diamond.toFixed(4));
       this.styleObject.forEach((item, i) => {
         if (i == index) {
+      //   this.$refs.img[index].style.opacity=0
+      // this.$refs.img[i].style.transition='all 2s'
+      // this.$refs.img[i].style.transform='scale(1.5)'
+          //  e.currentTarget.style.opacity=0
+          //   e.currentTarget.style.transition = "2s"
+        //  this.styleObject[index].style.opacity=0
+        //   this.styleObject[index].style.transition='2s'
+       
          this.flag = false;
           this.styleObject.splice(index, 1);//删除点击的钻石
            
@@ -98,11 +109,11 @@ export default {
   color: white;
   font-size: 18px;
   // display: flex;
-}
-.header img {
+  img {
   margin-left: 10px;
   width: 15px;
   height: 15px;
+}
 }
 .left,.right{
 width: 35%;
@@ -118,19 +129,20 @@ box-shadow: 6px 6px 5px black;
  position: absolute;
   top: 70%;
   left:2%;
-}
-.left img{
+   img{
   margin-top: 8px;
   width: 80%;
 }
+}
+
 .right{
    position: absolute;
   top: 70%;
   left:40%;
-}
-.right img{
+   img{
   margin-top: 8px;
    width: 80%;
+}
 }
 @keyframes mymove
 {
@@ -148,7 +160,7 @@ box-shadow: 6px 6px 5px black;
 .img{
  animation:mymove 1s ease;
 }
-// .img{
-//  animation:move 2s ease;
+// .img:hover{
+//  transform: rotate(30deg);
 // }
 </style>
