@@ -42,7 +42,6 @@
 </template>
 
 <script>
-import axios from "axios";
 import { mapState } from "vuex";//导入vuex中的state
 export default {
   data() {
