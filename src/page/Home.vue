@@ -16,8 +16,7 @@
 
     <div
       class="img"
-       ref="img" 
-      @click="fadeClick($event,index)"
+      @click="fadeClick(index)"
       v-for="(item,index) in styleObject"
       :key="index"
       :style="item"
@@ -59,7 +58,7 @@ export default {
   },
   methods: {
     //点击钻石时间处理
-    fadeClick(e, index) {
+    fadeClick(index) {
       let dia = Number(this.ave) + Number(this.diamond);
       this.$store.state.diamond = dia.toFixed(4);//保留四位小数
       // console.log(this.diamond.toFixed(4));
