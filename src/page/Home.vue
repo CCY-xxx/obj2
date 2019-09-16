@@ -47,7 +47,6 @@ import { mapState } from "vuex";//导入vuex中的state
 export default {
   data() {
     return {
-      index:0,
       flag: true,
       msg: "Welcome to Your Vue.js App"
      
@@ -67,14 +66,6 @@ export default {
       // console.log(this.diamond.toFixed(4));
       this.styleObject.forEach((item, i) => {
         if (i == index) {
-      //   this.$refs.img[index].style.opacity=0
-      // this.$refs.img[i].style.transition='all 2s'
-      // this.$refs.img[i].style.transform='scale(1.5)'
-          //  e.currentTarget.style.opacity=0
-          //   e.currentTarget.style.transition = "2s"
-        //  this.styleObject[index].style.opacity=0
-        //   this.styleObject[index].style.transition='2s'
-        this.index=index
          this.flag = false;
           this.styleObject.splice(index, 1);//删除点击的钻石
            
